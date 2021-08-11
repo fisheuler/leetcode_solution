@@ -104,23 +104,27 @@ class Solution_10 {
 
     public boolean match(String s ,int sp,String p,int pp){
         int slength = s.length();
-        int plength = s.length();
-        if(sp >= slength || pp >= plength){
+        int plength = p.length();
+        if(sp > slength || pp >plength){
             return false;
         }
 
-        if((sp == slength-1) && (pp == plength-1)){
+        if(sp ==slength && pp == plength){
             return true;
         }
-        if(pp==plength-1){
+
+        if(pp==plength){
             return false;
         }
 
 
-
-        if((pp+1<=plength-1) && p.charAt(pp+1)=='*'){
+        if((pp+1<plength) && p.charAt(pp+1)=='*'){
             if(isCharMath(s,sp,p,pp)){
-                return match(s,sp+1,p,pp+2) || match(s,sp,p,pp+2) || match(s,sp+1,p,pp);
+                boolean firstResult = match(s,sp+1,p,pp+2);
+                boolean secondResult = match(s,sp,p,pp+2);
+                boolean thirdResult = match(s,sp+1,p,pp);
+
+                return firstResult || secondResult || thirdResult;
             }else{
                 return match(s,sp,p,pp+2);
             }
@@ -135,6 +139,12 @@ class Solution_10 {
     }
 
     public boolean isCharMath(String s,int sp,String p, int pp){
+        if(sp >=s.length()){
+            return false;
+        }
+        if(pp >= p.length()){
+            return false;
+        }
         char schar = s.charAt(sp);
         char pchar = p.charAt(pp);
         if(schar == pchar || pchar == '.'){
