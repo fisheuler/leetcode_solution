@@ -64,7 +64,63 @@
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        
+        if(head==null){
+            return head;
+        }
+
+        ListNode slow = head;
+        ListNode quick = head;
+
+        boolean haveCircle=false;
+        while(quick != null && quick.next !=null){
+            slow = slow.next;
+            quick = quick.next.next;
+            if(slow == quick){
+                haveCircle = true;
+                break;
+            }
+        }
+
+        if(!haveCircle){
+            return null;
+        }
+
+        ListNode circleNode = slow.next;
+
+        int circleCount = 1;
+
+        while(circleNode!=slow){
+            circleCount++;
+            circleNode = circleNode.next;
+        }
+
+        /*
+
+         Plength = 从head 到circle_head 的步数
+
+         Pcircle = circle环的数目
+
+         两个指针：
+         P1:从head 开始先走circle步
+
+         然后P1和P2再往下走Plength步，一定相交。
+
+         */
+
+        ListNode p1 = head;
+        while(circleCount>0){
+            p1 = p1.next;
+            circleCount--;
+        }
+
+        ListNode p2 = head;
+
+        while(p1!=p2){
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+
+        return p1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

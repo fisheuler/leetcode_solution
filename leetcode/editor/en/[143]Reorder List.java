@@ -74,12 +74,7 @@ class Solution {
             ListNode p1Temp = p1.next;
             ListNode midTemp = mid.next;
             total.next = mid;
-
-
-
         }
-
-
     }
 
     public ListNode reverseList(ListNode listNode){

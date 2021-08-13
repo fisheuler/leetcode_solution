@@ -44,7 +44,14 @@
  */
 class Solution extends SolBase {
     public int rand10() {
+        int value = 49;
+        while(value>=40){
+            int first = rand7();
+            int second = rand7();
 
+            value = (first-1) *7 + second-1;
+        }
+        return value%10+1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
