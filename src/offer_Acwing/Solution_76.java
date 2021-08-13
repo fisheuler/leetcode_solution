@@ -1,5 +1,4 @@
 /*
- * Copyright (c) 2021 koolearn.com
  * All rights reserved.
  *
  */
