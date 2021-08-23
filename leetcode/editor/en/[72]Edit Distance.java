@@ -47,6 +47,26 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    /*
+
+        https://leetcode.com/problems/edit-distance/discuss/25846/C%2B%2B-O(n)-space-DP
+
+        cost[i][j]: minimum operations to convert word1 to word2
+
+
+        transform formula:
+
+        1 word[i]=word[j]
+        : cost[i][j]=cost[i-1][j-1]
+
+        2 word[i] != word[j]
+
+        2.1 delete操作 cost[i-1][j] +delete word1的第i个字符
+        2.2 add 操作   cost[i][j-1] +add  word2的第j个字符
+        2.3 replace操作 cost[i-1][j-1] 将word1的第i个字符转换成word2的第j个字符
+
+
+     */
     public int minDistance(String word1, String word2) {
         int m = word1.length();
         int n = word2.length();
@@ -61,14 +81,14 @@ class Solution {
             cost[0][j] = j;
         }
 
-        for(int i=0;i<=m;i++){
-            for(int j=0;j<=n;j++){
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
                 if(word1.charAt(i) == word1.charAt(j)){
                     cost[i+1][j+1] = cost[i][j];
                 }else{
                     int a = cost[i][j]; // replace
-                    int b = cost[i+1][j]; // delete
-                    int c = cost[i][j+1]; // add
+                    int b = cost[i+1][j]; // add
+                    int c = cost[i][j+1]; // delete
                     int max = Math.max(a,Math.max(b,c));
                     cost[i+1][j+1] = max ++;
                 }
