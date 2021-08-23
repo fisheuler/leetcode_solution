@@ -47,8 +47,10 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     /*
-    minArray数组：下表I记录的是长度为I的递增序列末尾的最大值
 
+    https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation
+
+    minArray数组：下表I记录的是长度为I的递增序列末尾的最大值
 
     minArray在遍历数组nums的时候关系维护如下：
     1 在minArray数组中找一个下标：使得  minArray[i-1]<nums<=minArray[i]
