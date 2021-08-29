@@ -44,7 +44,7 @@
 import java.util.Stack;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution_402 {
     public String removeKdigits(String num, int k) {
         if(k >= num.length()){
             return "";
