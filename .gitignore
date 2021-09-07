@@ -1,5 +1,8 @@
 .idea/
 out/
 *.iml
+*.DS_Store
 leetcode/editor/en/all.json
 leetcode/editor/en/all.json
+leetcode-problem/src/main/resources/leetcode/editor/en/all.json
+leetcode-problem/target/
