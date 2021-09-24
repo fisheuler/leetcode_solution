@@ -13,6 +13,13 @@ import com.google.common.hash.Funnels;
  * @created 2021/9/7
  *
  * Examplefrom :https://www.cnblogs.com/CodeBear/p/10911177.html
+ *
+ * https://developer.aliyun.com/article/773205
+ *
+ *
+ * https://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=9ee014fc899a28a198492b074e32b60ed8915ea9
+ *
+ *
  */
 public class BloomFilterTest {
     private static int size = 1000000;
