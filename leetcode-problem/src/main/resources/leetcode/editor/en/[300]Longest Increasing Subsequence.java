@@ -57,6 +57,16 @@ class Solution {
     然后更新minArray[i]下标的值
     2 如果找不到下标，需要将minArray现有最大下标值加1
 
+
+    算法应用：
+    Part of MUMmer (Maximum Unique Match finder) system for aligning entire genomes.
+    Used in version control systems like Git etc.
+    Used in Patience Diff, a diffing algorithm
+
+
+    耐心排序 （patience sorting） 有相似的关系
+
+
      */
     public int lengthOfLIS(int[] nums) {
         int[] minArray = new int[nums.length+1];
