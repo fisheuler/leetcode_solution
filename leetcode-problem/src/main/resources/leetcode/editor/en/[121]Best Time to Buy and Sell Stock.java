@@ -40,10 +40,16 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    /*
+    Kadane's Algorithm
+
+    "max subarray problem" using Kadane's Algorithm
+    
+     */
     public int maxProfit(int[] prices) {
-        int maxProfit = Integer.MIN_VALUE;
+        int maxProfit = 0;
         int minPrice = prices[0];
-        for(int i=1;i<prices.size();i++){
+        for(int i=1;i<prices.length;i++){
             maxProfit = Math.max(maxProfit,(prices[i]-minPrice));
             if(prices[i]<minPrice){
                 minPrice = prices[i];

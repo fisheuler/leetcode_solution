@@ -62,7 +62,55 @@
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        
+        if(lists.length == 0){
+            return null;
+        }
+        if(lists.length == 1){
+            return lists[0];
+        }
+        if(lists.length ==2){
+            return mergeTwoList(lists[0],lists[1]);
+        }
+        ListNode[] one = new ListNode[lists.length/2];
+        ListNode[] two = new ListNode[lists.length - lists.length/2];
+
+        //(src   , src-offset  , dest , offset, count)
+        System.arraycopy(lists,  0, one, 0     , one.length);
+        System.arraycopy(lists, one.length, two, 0     , two.length);
+
+
+        ListNode left = mergeKLists(one),right = mergeKLists(two);
+        return mergeTwoList(left,right);
+    }
+
+
+
+    public ListNode mergeTwoList(ListNode first ,ListNode second){
+        if(first == null){
+            return second;
+        }
+        if(second == null){
+            return first;
+        }
+        ListNode head = new ListNode();
+        ListNode temp = head;
+        while(first!=null && second !=nulll){
+            if(first.val <= second.val){
+                temp.next = first;
+                first = first.next;
+            }else{
+                temp.next = second;
+                second = second.next;
+            }
+            temp = temp.next;
+        }
+        if(first!=null){
+            temp.next = first;
+        }else if (second!=null){
+            temp.next = second;
+        }
+
+        return head.next;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -36,7 +36,7 @@ import java.util.Arrays;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution_56 {
     public int[][] merge(int[][] intervals) {
         if (intervals == null || intervals.length==1){
             return intervals;
