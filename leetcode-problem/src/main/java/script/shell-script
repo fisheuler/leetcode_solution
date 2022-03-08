@@ -1,0 +1,28 @@
+
+
+ls | grep java | awk '{print "- " "[" $0 "]" "(" "./leetcode-problem/src/main/java/solution/"  $0 ")"}'
+
+
+ls | grep java | awk '{print "- " "[" $0 "]" "(" "./leetcode-problem/src/main/java/solution" }'
+
+
+
+echo $1 | perl -MURI::Escape -lne 'print uri_escape($_)'
+
+
+paste -d "/" txt txt2 > txt3
+
+
+
+
+ls | grep java |  perl -MURI::Escape -lne 'print uri_escape($_) . ")" ' > txt2
+
+
+
+
+paste txt txt2
+
+
+DATA=$(python -c "import urllib, sys; print urllib.quote(sys.argv[1])"  "$DATA")
+
+paste -d '' txt txt2
