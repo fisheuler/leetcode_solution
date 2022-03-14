@@ -58,30 +58,30 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isValid(String s) {
-        if(s==null || s.length()%2==1){
-            return false;
-        }
-
-
         Stack<Character> stack = new Stack();
         for(int i=0;i<s.length();i++){
             char ch = s.charAt(i);
             if(ch == '(' || ch == '{' || ch == '['){
                 stack.push(ch);
             }else{
+                if(stack.size()<=0){
+                    return false;
+                }
                 char stackTop = stack.peek();
                 if(ch==')' && stackTop=='(' || ch=='}' && stackTop=='{' ||
-                ch==']' && stackTop=='['){
+                        ch==']' && stackTop=='['){
                     stack.pop();
                 }else{
                     return false;
                 }
             }
         }
+
         if(stack.size()>0){
             return false;
         }
         return true;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
