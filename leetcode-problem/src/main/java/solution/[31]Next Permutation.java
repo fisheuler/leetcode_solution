@@ -1,4 +1,4 @@
-//Implement next permutation, which rearranges numbers into the lexicographicall
+package solution;//Implement next permutation, which rearranges numbers into the lexicographicall
 //y next greater permutation of numbers. 
 //
 // If such an arrangement is not possible, it must rearrange it as the lowest po
@@ -34,7 +34,7 @@
 import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution_31 {
     /*
         1,2,3,4,5,6,7,8
 
@@ -88,9 +88,7 @@ class Solution {
 
         for(int j=nums.length-1;j>0;j--){
             if(nums[j]>nums[j-1]){
-
                 int prev = nums[j-1];
-                int cur = nums[j];
                 int i=j;
                 int nextBig =Integer.MAX_VALUE;
                 int nextBigIndex = -1;
@@ -112,11 +110,24 @@ class Solution {
 
             }
             if(j==1){
-                for(int i = 0;i<nums.length;i++){
-                    nums[i]=i;
-                }
+                Arrays.sort(nums);
             }
         }
     }
+
+    public static void main(String[] args){
+        Solution_31 solution = new Solution_31();
+        int[] nums = new int[]{5,1,1};
+
+        solution.nextPermutation(nums);
+        print(nums);
+    }
+
+    public static void print(int[] nums){
+        for(int num: nums){
+            System.out.print(num + ",");
+        }
+    }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)

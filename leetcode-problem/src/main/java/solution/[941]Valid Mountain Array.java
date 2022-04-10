@@ -67,7 +67,6 @@ class Solution_941 {
         Solution_941 solution = new Solution_941();
 
 
-
         System.out.println(solution.validMountainArray(new int[]{0,3,2,1}));
     }
 }
