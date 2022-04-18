@@ -3,7 +3,7 @@
  * All rights reserved.
  *
  */
-package solution.company;
+package interview.company;
 
 /**
  * @author guozhaoliang

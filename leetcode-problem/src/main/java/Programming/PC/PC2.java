@@ -3,7 +3,7 @@
  * All rights reserved.
  *
  */
-package solution.Programming.PC;
+package Programming.PC;
 
 import java.util.LinkedList;
 import java.util.Queue;

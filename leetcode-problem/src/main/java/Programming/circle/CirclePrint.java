@@ -3,7 +3,7 @@
  * All rights reserved.
  *
  */
-package solution.Programming.circle;
+package Programming.circle;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
