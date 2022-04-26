@@ -1,4 +1,4 @@
-//You are given the root of a binary search tree (BST), where exactly two nodes 
+package solution;//You are given the root of a binary search tree (BST), where exactly two nodes
 //of the tree were swapped by mistake. Recover the tree without changing its struc
 //ture. 
 //
@@ -51,41 +51,46 @@
  *     }
  * }
  */
-class Solution {
+class Solution_99 {
+
+
+    /*
+        3 1 4 2
+
+
+        2 1 4 3
+
+     */
     TreeNode firstNode ;
     TreeNode secondNode;
     TreeNode preNode;
 
     public void recoverTree(TreeNode root) {
-        tranverse(root);
+        traverse(root);
         int temp = firstNode.val;
         firstNode.val = secondNode.val;
         secondNode.val = temp;
     }
 
 
-    private void tranverse(TreeNode root){
+    private void traverse(TreeNode root){
         if(root == null){
             return;
         }
-        tranverse(root.left);
-        // root visist
+        traverse(root.left);
+        // root visit
 
-        if(preNode == null){
-            preNode = root;
-        }else{
-            if(preNode.val >= root.val){
-                if(firstNode == null){
+        if (preNode != null) {
+            if (preNode.val >= root.val) {
+                if (firstNode == null) {
                     firstNode = preNode;
-                    secondNode = root;
-                }else{
-                    secondNode = root;
                 }
+                secondNode = root;
             }
-            preNode = root;
         }
+        preNode = root;
 
-        tranverse(root.right);
+        traverse(root.right);
     }
 
 }

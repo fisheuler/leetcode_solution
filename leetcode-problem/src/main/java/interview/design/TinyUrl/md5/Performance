@@ -1,0 +1,44 @@
+第一轮
+
+
+
+1000000iteration: size:1000000 consume time :6733 collision :29396
+1000000iteration: collision percent 2.9396
+2000000iteration: size:2000000 consume time :5905 collision :114558
+2000000iteration: collision percent 5.7279
+3000000iteration: size:3000000 consume time :3188 collision :252334
+3000000iteration: collision percent 8.411133333333334
+4000000iteration: size:4000000 consume time :7866 collision :439907
+4000000iteration: collision percent 10.997675
+5000000iteration: size:5000000 consume time :2771 collision :674647
+5000000iteration: collision percent 13.49294
+6000000iteration: size:6000000 consume time :2644 collision :953996
+6000000iteration: collision percent 15.899933333333333
+7000000iteration: size:7000000 consume time :12507 collision :1275560
+7000000iteration: collision percent 18.222285714285714
+8000000iteration: size:8000000 consume time :2634 collision :1635677
+8000000iteration: collision percent 20.4459625
+9000000iteration: size:9000000 consume time :17124 collision :2033704
+9000000iteration: collision percent 22.596711111111112
+10000000iteration: size:10000000 consume time :3870 collision :2465909
+10000000iteration: collision percent 24.65909
+11000000iteration: size:11000000 consume time :4305 collision :2930299
+11000000iteration: collision percent 26.639081818181822
+12000000iteration: size:12000000 consume time :16135 collision :3426129
+12000000iteration: collision percent 28.551074999999997
+13000000iteration: size:13000000 consume time :4232 collision :3951613
+13000000iteration: collision percent 30.397023076923073
+14000000iteration: size:14000000 consume time :4318 collision :4504302
+14000000iteration: collision percent 32.173585714285714
+15000000iteration: size:15000000 consume time :3630 collision :5084587
+15000000iteration: collision percent 33.89724666666667
+16000000iteration: size:16000000 consume time :5938 collision :5686806
+16000000iteration: collision percent 35.5425375
+17000000iteration: size:17000000 consume time :45258 collision :6312541
+17000000iteration: collision percent 37.13259411764706
+18000000iteration: size:18000000 consume time :42968 collision :6960277
+18000000iteration: collision percent 38.66820555555556
+19000000iteration: size:19000000 consume time :71533 collision :7627746
+19000000iteration: collision percent 40.146031578947365
+
+

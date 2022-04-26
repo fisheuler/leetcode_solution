@@ -41,5 +41,7 @@ class Solution {
         }
         return q.peek();
     }
+
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
