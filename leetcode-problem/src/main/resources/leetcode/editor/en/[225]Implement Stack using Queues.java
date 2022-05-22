@@ -55,22 +55,24 @@
 // 👍 1277 👎 713
 
 
+import java.util.Queue;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class MyStack {
-    private Queue<Integer> one = new Queue();
-    private Queue<Integer> two = new Queue();
+    private Queue<Integer> one = new LinkedList<>();
+    private Queue<Integer> two = new LinkedList<>();
     Integer top;
     /** Initialize your data structure here. */
     public MyStack() {
-        
+
     }
-    
+
     /** Push element x onto stack. */
     public void push(int x) {
         one.offer(x);
         top=x;
     }
-    
+
     /** Removes the element on top of the stack and returns that element. */
     public int pop() {
         while(one.size()>1){
@@ -83,15 +85,15 @@ class MyStack {
         two = temp;
         return value;
     }
-    
+
     /** Get the top element. */
     public int top() {
         return top;
     }
-    
+
     /** Returns whether the stack is empty. */
     public boolean empty() {
-        return one.isEmpty() && two.IsEmpty();
+        return one.isEmpty() && two.isEmpty();
     }
 }
 

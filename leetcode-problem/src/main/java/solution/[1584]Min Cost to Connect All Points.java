@@ -1,4 +1,4 @@
-//You are given an array points representing integer coordinates of some points 
+package solution;//You are given an array points representing integer coordinates of some points
 //on a 2D-plane, where points[i] = [xi, yi]. 
 //
 // The cost of connecting two points [xi, yi] and [xj, yj] is the manhattan dist
@@ -43,7 +43,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution_1584 {
     public int minCostConnectPoints(int[][] points) {
 
         int n = points.length;
@@ -67,8 +67,11 @@ class Solution {
                     pq.add(new int[]{Math.abs(points[i][0]-points[j][0])+Math.abs(points[i][1]-points[j][1]),j});
                 }
             }
-            while(visited[pq.peek()[1]]){
+            while(pq.size()>0 && visited[pq.peek()[1]]){
                 pq.poll();
+            }
+            if(pq.size()<1){
+                break;
             }
             int[] pop = pq.poll();
 
@@ -82,27 +85,14 @@ class Solution {
 
 
 
+    public static void main(String[] args){
+        Solution_1584 solution = new Solution_1584();
+        int[][] points = new int[][]{
+                {0,0},{2,2},{3,10},{5,2},{7,0}
+        };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println(solution.minCostConnectPoints(points));
+    }
 
 }
 //leetcode submit region end(Prohibit modification and deletion)

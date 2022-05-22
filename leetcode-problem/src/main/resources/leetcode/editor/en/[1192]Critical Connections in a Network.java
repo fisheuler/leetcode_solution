@@ -40,29 +40,59 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+
     public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
+        List<Integer>[] graph = new ArrayList[n];
+//        Arrays.fill(graph,new ArrayList<>());
 
+        for(int i=0;i<n;i++){
+            graph[i] = new ArrayList<>();
+        }
 
+        for(List<Integer> connect:connections){
+            graph[connect.get(0)].add(connect.get(1));
+            graph[connect.get(1)].add(connect.get(0));
+        }
+
+        HashSet<List<Integer>> connectionSet = new HashSet<>(connections);
+
+        int[] rank = new int[n];
+
+        Arrays.fill(rank,-2);
+
+        dfs(graph,0,0,rank,connectionSet);
+
+        return new ArrayList<>(connectionSet);
     }
 
+    int dfs(List<Integer>[] graph,int node,int depth,int[] rank,HashSet<List<Integer>> connectionsSet){
 
+        if(rank[node]>=0){
+            return rank[node];
+        }
 
+        rank[node] = depth;
 
+        int minDepth = depth;
 
+        for(Integer neighbor: graph[node]){
+            if(rank[neighbor] == depth-1){
+                continue;
+            }
+            int nDepth = dfs(graph,neighbor,depth+1,rank,connectionsSet);
+            if(nDepth <=depth){
+                connectionsSet.remove(Arrays.asList(node,neighbor));
+                connectionsSet.remove(Arrays.asList(neighbor,node));
+            }
+            minDepth = Math.min(minDepth,nDepth);
 
-
-
-
-
-
-
-
-
-
-
+        }
+        return minDepth;
+    }
 
 }
 //leetcode submit region end(Prohibit modification and deletion)

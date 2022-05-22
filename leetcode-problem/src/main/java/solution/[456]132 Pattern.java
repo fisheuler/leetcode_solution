@@ -46,6 +46,17 @@ import java.util.Stack;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution_132 {
+    /*
+    https://leetcode.com/problems/132-pattern/discuss/94071/Single-pass-C%2B%2B-O(n)-space-and-time-solution-(8-lines)-with-detailed-explanation.
+
+    1 从后往前入栈，维护一个Monotonic decrease stack
+    2 碰到新元素，根据其与堆顶元素的关系进行下一步的操作：
+        2.1 小于等于堆顶元素，直接入堆
+        2.2 大于堆顶元素，那么一直弹堆顶元素，直到其小于现有的堆顶元素，在这个过程中：
+            （1）需要更新secondMax的值；
+             (2) 并且把当前元素入栈
+
+     */
 
     public static boolean find132pattern(int[] nums){
         int secondMax = Integer.MIN_VALUE;
