@@ -54,9 +54,18 @@ class Solution_322{
         dp[0]=0;
 
         for(int j=0;j<coins.length;j++){
+            System.out.println("j:"+j +" coins[j]:"+coins[j]);
             for(int i=0;i<=amount;i++){
                 if(i-coins[j]>=0){
+                    System.out.println("dp"+i +" before:"+dp[i]);
+
+                    System.out.println(i +":"+dp[i] +" " + i +"-"+coins[j]+"="+(i-coins[j])+" :"+(dp[i-coins[j]]+1));
+
+                    System.out.println("dp[i-coins[j]" +"=" +"dp["+i+"-"+coins[j]+"]" +"="+"dp["+(i-coins[j])+"]"+"="+dp[i-coins[j]]);
+                    System.out.println("dp["+(i-coins[j])+"] +1 = " +(dp[i-coins[j]] +1));
                     dp[i] = Math.min(dp[i],dp[i-coins[j]]+1);
+                    System.out.println("dp"+i +" after:"+dp[i]);
+                    System.out.println();
                 }
             }
         }
@@ -106,7 +115,7 @@ class Solution_322{
         int val = 11;
 //        int[] answer = solution.countBits(31);
 
-        System.out.println(solution.coinChange(nums,val));
+        System.out.println(solution.coinChange_2(nums,val));
     }
 
 
